@@ -1,9 +1,10 @@
 import ListIem from "../ListIem";
-import "./style.css";
+import "./style.js";
+import { ListBox } from "./style.js";
   
 function List(props) {
   return (
-    <section className={"list flex"}>
+    <ListBox>
       {props.items.map((item, id) => (
          <ListIem
          handleDelete = {props.handleDelete}
@@ -13,7 +14,7 @@ function List(props) {
        />
       ))}
   
-    </section>
+    </ListBox>
   );
 }
 

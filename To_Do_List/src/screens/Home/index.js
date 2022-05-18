@@ -1,23 +1,23 @@
-import "./style.css";
 import InputBox from "../../components/InputBox";
 import List from "../../components/List";
-import {useState} from "react";
+import { useState } from "react";
+import { InnerContener, Title } from "../../theme/global";
 
 const initialItems = [
   {
-    title: "Mutaz",
+    title: "watching a movie",
     id: Math.random() * 1000,
   },
   {
-    title: "Yazn",
+    title: "Playing football",
     id: Math.random() * 1000,
   },
   {
-    title: "Moath",
+    title: "Reading a book",
     id: Math.random() * 1000,
   },
   {
-    title: "Husam",
+    title: "Go to gym",
     id: Math.random() * 1000,
   },
 ];
@@ -32,36 +32,30 @@ function Home() {
 
   const handleAdd = () => {
     setItems([
-        
-        {
-            title: value,
-            id: Math.random() * 1000,
-        },
-        ...items
+      {
+        title: value,
+        id: Math.random() * 1000,
+      },
+      ...items,
     ]);
 
-    setValue('')
+    setValue("");
   };
 
   const handleDelete = (id) => {
-    setItems(
-      items.filter((item) => item.id !== id),
-    );
+    setItems(items.filter((item) => item.id !== id));
   };
 
-
   return (
-      <div className={"inner-container"}>
-        <h1>To Do List App</h1>
-        <InputBox
-            value={value}
-            handleChange={handleChange}
-            handleAdd={handleAdd}
-        />
-        <List items={items} handleDelete={handleDelete} />
-
-      </div>
-
+    <InnerContener>
+      <Title>List Task</Title>
+      <InputBox
+        value={value}
+        handleChange={handleChange}
+        handleAdd={handleAdd}
+      />
+      <List items={items} handleDelete={handleDelete} />
+    </InnerContener>
   );
 }
 export default Home;

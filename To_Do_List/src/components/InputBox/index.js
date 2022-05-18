@@ -1,10 +1,11 @@
-import "./style.css";
+import "./style.js";
 import Button from "../Button";
+import { InnerInput, Input } from "./style.js";
 
 function InputBox(props) {
   return (
-    <div className={"flex input-box"}>
-      <input
+    <InnerInput >
+      <Input
         onChange={(e)=>props.handleChange(e)}
         value={props.value}
         type="text"
@@ -22,7 +23,7 @@ function InputBox(props) {
       >
         Add
       </Button>
-    </div>
+    </InnerInput>
   );
 }
 

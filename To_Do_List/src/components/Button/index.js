@@ -1,10 +1,10 @@
-import './style.css'
+import * as ComponentStyled from "./style";
 
 function Button({ isWhite, ...props }) {
   return (
-    <button {...props} className={isWhite && "white"}>
+    <ComponentStyled.StyledButton {...props} isWhite={isWhite}>
       {props.children}
-    </button>
+    </ComponentStyled.StyledButton>
   );
 }
 
